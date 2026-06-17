@@ -15,12 +15,26 @@
 \title{Designing an Accessible Narrative Game to Elicit How Disabled
 People Adapt to Climate Hazards: A Heatwave Scenario}
 
-\author{Jingyu Lei, Ramit Debnath, Metteo Zallio}
+\author{Jingyu Lei}
 \affiliation{%
   \institution{University of Cambridge}
   \city{Cambridge}
   \country{UK}}
-\email{Jl2557@cam.ac.uk}
+\email{jl2557@cam.ac.uk}
+
+\author{Ramit Debnath}
+\affiliation{%
+  \institution{University of Cambridge}
+  \city{Cambridge}
+  \country{UK}}
+\email{rd545@cam.ac.uk}
+
+\author{Metteo Zallio}
+\affiliation{%
+  \institution{University of Cambridge}
+  \city{Cambridge}
+  \country{UK}}
+\email{mz461@cam.ac.uk}
 
 \renewcommand{\shortauthors}{Lei}
 
@@ -34,9 +48,9 @@ generating decision-level behavioural evidence with disabled people. A
 mixed-methods scoping review yields four behavioural mechanisms of
 exclusion, which we translate into concrete game-design requirements and
 an accessibility specification targeting WCAG~2.2~AA. We illustrate the
-design through one complete urban-heatwave scenario---spanning warning
+design through one complete urban-heatwave scenario, spanning warning
 information, housing, transport, healthcare, support networks, public
-services, and DPO involvement---co-designed with Disabled People's
+services, and DPO involvement, co-designed with Disabled People's
 Organisations. We present the design rationale, an interactive Figma
 prototype, and formative feedback from two disabled participants.
 \end{abstract}
@@ -58,9 +72,7 @@ prototype, and formative feedback from two disabled participants.
 \ccsdesc[500]{Human-centered computing~Accessibility}
 \ccsdesc[300]{Human-centered computing~HCI design and evaluation methods}
 
-\keywords{accessibility; participatory design; narrative game; serious
-games; disability; climate adaptation; behavioural evidence; co-design;
-work in progress}
+\keywords{climate justice; climate adaptation; accessibility; participatory design; narrative game; inclusive design; disability; behavioural evidence; co-design; disability agency}
 
 \maketitle
 
@@ -92,12 +104,11 @@ derived from a mixed-methods scoping review, translated into concrete
 game-design requirements; and (2) \emph{an accessible narrative
 game}---co-designed with Disabled People's Organisations (DPOs)---that
 elicits decision-level behavioural evidence from disabled participants
-through a focused urban-heatwave scenario. We report the design
-rationale, an accessibility specification, an initial Figma prototype,
-and formative feedback from two disabled participants. This is work in
+through a focused urban-heatwave scenario. We report the design rationale, an accessibility specification, an initial Figma prototype(2-3 illustration), and formative feedback from two disabled participants. This is work in
 progress.
 
-\section{Literature-Grounded Design Requirements}
+\section{Method}
+\subsection{Literature-Grounded scoping review}
 \textbf{Review method and inclusion criteria.} To ground the design in
 evidence rather than assumption, we conducted a mixed-methods scoping
 review reported per PRISMA-ScR
@@ -122,7 +133,7 @@ vulnerability, while participation, agency, behavioural response, and
 policy evaluation remain peripheral. The qualitative synthesis explained
 \emph{why} by surfacing the behaviours that reproduce this absence.
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\columnwidth]{Prisma.pdf}
 \caption{PRISMA-ScR flow of identification and screening (2006--2025),
@@ -186,7 +197,7 @@ not invisible background. \\
 \end{tabular}
 \end{table}
 
-\section{Game Concept and Interaction Design}
+\subsection{Game Concept and Interaction Design}
 \label{sec:game}
 \textbf{Why a narrative game?} The method follows from the kind of
 evidence the design must generate. Climate adaptation is not purely a
@@ -256,15 +267,15 @@ producing decision-level behavioural evidence on adaptive strategies,
 perceived barriers, and policy preferences that surveys and interviews
 capture only partially.
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=\columnwidth]{Scenairo.png}
+\includegraphics[width=\columnwidth]{Game2.jpg}
 \caption{A frame from the urban-heatwave scenario, showing a decision
 point in the narrative game.}
 \label{fig:scenario}
 \end{figure}
 
-\section{Accessibility Design}
+\subsection{Accessibility Design}
 Accessibility is treated as a design requirement, not a post-hoc
 adjustment, and is specified concretely for the first pilot round with
 mobility-disabled participants. WCAG~2.2 Level AA provides the
@@ -317,17 +328,18 @@ in Section~4 as requirements for the engineered build and are not claimed
 of the Figma artefact. Data capture, branching logic, and the analysis
 pipeline are likewise future work.
 
-\section{Formative Feedback from Two Disabled Participants(Need Ethic approval)}
-%% SCAFFOLD --- replace [...] with real content; nothing here is asserted yet.
-\textbf{Participants and method.} We gathered formative feedback from two
-disabled participants [access needs], recruited through [DPO partner /
-network]. Each took part in a [remote / in-person], [$\sim$X-minute]
-session in which they [walked through the Figma prototype] and [thought
-aloud / answered a short set of structured questions]. [Informed consent
-was obtained; ethics status: \ldots] This is formative and qualitative;
-we make no claims of generalisability from two participants.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{Scenairo.png}
+\caption{( need to revise and add to 3 scenarios) A frame from the urban-heatwave scenario, showing a decision point in the narrative game.}
+\label{fig:scenario}
+\end{figure}
 
-\textbf{What we asked.} Sessions focused on three questions: (i) does the
+\section{Data Collection: Interviews and Focus Group (from 4-10 disabled participants; need ethical approval)}
+
+\textbf{Participants and method.} We conducted semi-structured interviews with four disabled participants recruited through Chinese DPO partner, the Inclusive Laboratory for People with Disabilities. Each participant took part in a remote [X]-minute session involving a guided walkthrough of the Figma prototype, followed by open-ended questions and prompts. Participants were encouraged to comment on the realism of the scenario, the clarity and accessibility of the interaction, and any aspects of the design that excluded, constrained, or misrepresented their experiences. Informed consent was obtained before participation, and [ethics approval status]. The interviews were formative and qualitative; no claims of representativeness or generalisability are made from this small sample.
+
+\textbf{Survey questions.} Sessions focused on three questions: (i) does the
 urban-heatwave scenario read as realistic and relevant to their lived
 experience? (ii) are the decision points understandable and the
 interaction navigable? (iii) where does the design still exclude or
@@ -344,6 +356,8 @@ misrepresent them?
 
 \textbf{What we changed.} [ concrete design changes
 prompted by the feedback, or ``planned'' .]
+
+\section{Findings}
 
 \section{Discussion}
 This work reframes a problem usually treated as one of policy recognition
