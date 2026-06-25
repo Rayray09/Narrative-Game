@@ -1,58 +1,85 @@
+%% =====================================================================
+%% CHI 2027 FULL PAPER --- ANONYMISED REVIEW VERSION (SKELETON)
+%% Official ACM single-column "manuscript" review format.
+%%
+%% HOW TO USE THIS FILE
+%% Every section/subsection below carries a \guide{...} note in grey,
+%% describing exactly what content YOU must write there. The \guide notes
+%% are scaffolding only: delete each one once the real prose is written.
+%% Nothing in a \guide note is a finding, quotation, statistic, or claim;
+%% no data, participant material, or ethics outcome has been invented.
+%% Items that depend on data you have not yet collected are marked
+%% \TODO{...} so they are impossible to miss before submission.
+%% =====================================================================
 
-\documentclass[sigconf]{acmart}
+\documentclass[manuscript,review,anonymous]{acmart}
 
+%% --- Review-version housekeeping -------------------------------------
+\settopmatter{printacmref=false}          % no ACM ref block in review
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
 
-\setcopyright{acmlicensed}
-\copyrightyear{2026}
-\acmYear{2026}
-\acmConference[ASSETS '26]{The 28th International ACM SIGACCESS
-  Conference on Computers and Accessibility}{October 2026}{City, Country}
-\acmISBN{978-1-4503-XXXX-X/26/10}
-\acmDOI{10.1145/nnnnnnn.nnnnnnn}
+\AtBeginDocument{%
+  \providecommand\BibTeX{{\normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\acmConference[CHI '27]{Proceedings of the 2027 CHI Conference on Human
+  Factors in Computing Systems}{April 2027}{Anonymous Location}
+\acmYear{2027}
+\copyrightyear{2027}
+\setcopyright{none}
+
+%% --- Author-facing scaffolding macros (remove before final) ----------
+\usepackage{xcolor}
+\newcommand{\guide}[1]{\par\smallskip\noindent%
+  \textcolor{gray!75}{\small\textbf{[WRITE:]}\ \textit{#1}}\par\smallskip}
+\newcommand{\TODO}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
 
 \begin{document}
 
-\title{Designing an Accessible Narrative Game to Elicit How Disabled
-People Adapt to Climate Hazards: A Heatwave Scenario}
+%% =====================================================================
+%% TITLE / AUTHORS  (anonymised)
+%% =====================================================================
+\title{Playing the Heatwave: Eliciting Valid Behavioural Evidence from
+Disabled People for Disability-Inclusive Climate Adaptation Policy
+through Location-Specific Narrative Simulation}
 
-\author{Jingyu Lei}
+\guide{Title is provisional. It must foreground the THREE moves that make
+this a CHI contribution rather than the ASSETS poster: (1) narrative
+\emph{simulation} as a research method, (2) \emph{valid behavioural
+evidence} as the object produced, (3) disability-inclusive climate
+\emph{policy design and evaluation} as the application. Avoid ``game'' as
+the headline noun if it makes the work read as a serious-games artefact
+paper rather than a methods contribution. Consider an alternative that
+names the empirical study (e.g. ``\dots: A Study with N Disabled
+Participants'').}
+
+\author{Anonymous Author(s)}
 \affiliation{%
-  \institution{University of Cambridge}
-  \city{Cambridge}
-  \country{UK}}
-\email{jl2557@cam.ac.uk}
+  \institution{Submission ID: \TODO{number}. Our institution (anonymised
+  for review).}
+  \country{}}
+\renewcommand{\shortauthors}{Anonymous}
 
-\author{Ramit Debnath}
-\affiliation{%
-  \institution{University of Cambridge}
-  \city{Cambridge}
-  \country{UK}}
-\email{rd545@cam.ac.uk}
-
-\author{Metteo Zallio}
-\affiliation{%
-  \institution{University of Cambridge}
-  \city{Cambridge}
-  \country{UK}}
-\email{mz461@cam.ac.uk}
-
-\renewcommand{\shortauthors}{Lei}
-
+%% =====================================================================
+%% ABSTRACT
+%% =====================================================================
 \begin{abstract}
-Disabled people are disproportionately harmed by climate hazards yet are
-routinely excluded from adaptation governance, and the qualitative
-evidence on how they make adaptive decisions is rarely structured for
-design or policy use. We report work in progress on an accessible
-narrative game that turns this gap into a participatory method for
-generating decision-level behavioural evidence with disabled people. A
-mixed-methods scoping review yields four behavioural mechanisms of
-exclusion, which we translate into concrete game-design requirements and
-an accessibility specification targeting WCAG~2.2~AA. We illustrate the
-design through one complete urban-heatwave scenario, spanning warning
-information, housing, transport, healthcare, support networks, public
-services, and DPO involvement, co-designed with Disabled People's
-Organisations. We present the design rationale, an interactive Figma
-prototype, and formative feedback from two disabled participants.
+\guide{Rewrite the abstract (150--250 words) as a \emph{complete} study,
+not work-in-progress. Follow the CHI arc in 5--6 sentences: (1) Problem ---
+disabled people are disproportionately harmed by climate hazards and
+excluded from adaptation governance, and existing behavioural evidence is
+not structured for policy design/evaluation. (2) Gap --- HCI lacks methods
+that elicit \emph{valid}, decision-level behavioural evidence from
+disabled people about adaptation. (3) Approach --- a location-specific,
+accessible narrative simulation, grounded in literature-derived exclusion
+mechanisms and co-designed with DPOs, played end-to-end through one urban
+heatwave scenario. (4) Study --- the empirical study you actually run
+(N participants, methods, analysis). (5) Findings --- 2--3 headline
+results, including evidence bearing on the \emph{validity} question.
+(6) Contribution --- method + empirical findings + design/policy
+implications. Remove every phrase such as ``work in progress'',
+``formative'', ``initial'', ``two participants''. Do NOT state numeric
+results until they exist: mark them \TODO{} rather than inventing them.}
 \end{abstract}
 
 \begin{CCSXML}
@@ -65,362 +92,502 @@ prototype, and formative feedback from two disabled participants.
 <concept>
 <concept_id>10003120.10003121.10003122</concept_id>
 <concept_desc>Human-centered computing~HCI design and evaluation methods</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10003120.10003123.10010860</concept_id>
+<concept_desc>Human-centered computing~Empirical studies in HCI</concept_desc>
 <concept_significance>300</concept_significance>
 </concept>
 </ccs2012>
 \end{CCSXML}
 \ccsdesc[500]{Human-centered computing~Accessibility}
-\ccsdesc[300]{Human-centered computing~HCI design and evaluation methods}
+\ccsdesc[500]{Human-centered computing~HCI design and evaluation methods}
+\ccsdesc[300]{Human-centered computing~Empirical studies in HCI}
 
-\keywords{climate justice; climate adaptation; accessibility; participatory design; narrative game; inclusive design; disability; behavioural evidence; co-design; disability agency}
+\keywords{accessibility; disability; climate adaptation; climate justice;
+narrative simulation; serious games; research through design;
+participatory design; behavioural evidence; policy prototyping;
+disability agency; co-design}
 
 \maketitle
 
+%% =====================================================================
 \section{Introduction}
-Around 16\% of the world's population live with a disability, and they
-bear a disproportionate share of climate-related harm: higher disaster
-mortality, slower recovery, and barriers to safety that arise not from
-impairment itself but from inaccessible environments, weak emergency
-communication, and exclusion from decision-making
-\cite{kosanic2022inclusive,gaskin2017factors,stein2024advancing}.
-International frameworks---the Convention on the Rights of Persons with Disabilities (CRPD), Sendai, and Paris agreement---have recognised
-this inequality since 2006, yet recognition has not translated into accessible
-adaptation practice
-\cite{UN_CRPD_2006,UNISDR_Sendai_Framework_2015,UN_Paris_Agreement_2015}.
+\label{sec:intro}
+%% =====================================================================
+\guide{Open with the problem at policy scale: disabled people (~16\% of the
+world's population) bear disproportionate climate harm produced by
+inaccessible environments and exclusion from decision-making, not
+impairment per se; international frameworks (CRPD, Sendai, Paris) recognise
+this but recognition has not become accessible adaptation practice. Keep
+this to one tight paragraph --- it is motivation, not a literature review.}
 
-The root of this gap is a framing problem: disabled people are
-predominantly cast as \emph{vulnerable}---recipients of protection rather
-than agents whose choices shape outcomes. Yet our review shows the
-literature already holds substantial behavioural evidence on how disabled
-people adapt to climate stress, from cyclones and floods to extreme heat
-\cite{quaill2019queensland,skaggs2025data,villeneuve2021pcep}. That
-evidence is scattered, seldom comparable across contexts, and almost
-never structured for the decision-making processes where adaptation
-policy is set. The problem is therefore not missing evidence but evidence
-that never reaches design and decision-making.
+\guide{Second paragraph --- the \emph{research} gap reframed for HCI. State
+the framing problem (disabled people cast as vulnerable recipients, not
+agents) and then sharpen it into the gap this paper closes: rich
+qualitative evidence on adaptive decision-making exists but is scattered,
+non-comparable, and never structured for the decision processes where
+adaptation policy is set. The HCI-specific gap: there is no method that
+elicits \emph{decision-level, location-specific, behaviourally valid}
+evidence \emph{from} disabled people in a form usable for adaptation policy
+design and evaluation.}
 
-Narrative and game-based methods are well placed to bridge this. Scenario
-simulation is an established way to rehearse decisions under disaster
-uncertainty \cite{TannenbaumBaruchi2024}, and games extend it by letting
-people \emph{act} within a scenario rather than merely state preferences,
-exposing situated trade-offs that surveys and interviews miss
-\cite{somerdin2016game}. Such games have been applied successfully across
-climate education, communication, and data collection
-\cite{gerber2021games,mcgonigal2011reality,ulrich2014gaming}. Their
-limitation is one of inclusion: most climate games address the general
-public or students, leaving disabled people underrepresented as players
-and absent as co-designers \cite{o2010values}.
+\guide{Third paragraph --- the approach and why narrative \emph{simulation}.
+Argue that situated, realistic, location-specific narrative simulation lets
+disabled people \emph{act} within a concrete scenario rather than state
+abstract preferences, surfacing trade-offs, trust, and constraints that
+surveys/interviews miss. State that the simulation is (a) grounded in
+literature-derived exclusion mechanisms, (b) anchored in a specific
+geographic/policy context, and (c) co-designed with Disabled People's
+Organisations (DPOs) so the medium does not reproduce the exclusion it
+studies. Name the central empirical question: do such simulations elicit
+\emph{valid} behavioural evidence?}
 
-We address this gap with a design-led, participatory approach. This
-poster contributes: (1) \emph{four behavioural mechanisms of exclusion},
-derived from a mixed-methods scoping review, translated into concrete
-game-design requirements; and (2) \emph{an accessible narrative
-game}---co-designed with Disabled People's Organisations (DPOs)---that
-elicits decision-level behavioural evidence from disabled participants
-through a focused urban-heatwave scenario. We report the design rationale, an accessibility specification, an initial Figma prototype(2-3 illustration), and formative feedback from two disabled participants. This is work in
-progress.
+\guide{Fourth paragraph --- name the research questions explicitly (see
+Section~\ref{sec:rqs}) and forward-reference the study. Then give the
+formal contribution statement below.}
 
-\section{Method}
-\subsection{Literature-Grounded scoping review}
-\textbf{Review method and inclusion criteria.} To ground the design in
-evidence rather than assumption, we conducted a mixed-methods scoping
-review reported per PRISMA-ScR
-\cite{arksey2005scoping,levac2010scoping,tricco2018prisma}. We searched
-Web of Science, Scopus, and PubMed for records published 2006--2025
-(2006 marks the adoption of the CRPD) that combined a
-\emph{climate-governance} term with a \emph{disability/accessibility}
-term, the latter informed by the WHO International Classification of
-Functioning, Disability and Health (ICF) \cite{who_2001_icf}; broad
-``vulnerability'' terms were excluded so that disability remained a
-distinct analytical category rather than a generic label of common
-vulnerability. Screening (Figure~\ref{fig:prisma}) retained a
-267-record \emph{extended} dataset for bibliometric mapping and BERTopic
-topic modelling \cite{grootendorst_2022_bertopic}. From these we selected
-a 42-record \emph{core} dataset for qualitative synthesis, including only
-records carrying behavioural evidence on at least one stage of the
-recognition-to-implementation pathway---framing, participation, adaptive
-response, or institutional implementation---coded with a hybrid
-deductive--inductive frame. The bibliometric and topic analyses converged
-on a structural absence: the literature is anchored in disaster risk and
-vulnerability, while participation, agency, behavioural response, and
-policy evaluation remain peripheral. The qualitative synthesis explained
-\emph{why} by surfacing the behaviours that reproduce this absence.
+\subsection{Contributions}
+\label{sec:contributions}
+\guide{State 3--4 contributions as a bulleted list, each phrased as
+something the paper \emph{delivers and evidences} (not promises). Suggested
+shape: (1) A \emph{method} --- location-specific, accessible narrative
+simulation for eliciting decision-level behavioural evidence from disabled
+people, with a documented design process that traces literature-derived
+exclusion mechanisms to concrete design requirements (research through
+design). (2) \emph{Empirical findings} from a study with N disabled
+participants on how they adapt to an urban heatwave, including the adaptive
+strategies, barriers, trust, and policy preferences the simulation surfaced.
+(3) \emph{Evidence on validity} --- an account of when and how in-simulation
+behaviour corresponds to, and diverges from, real adaptive behaviour, and
+what this means for using such evidence in policy. (4) \emph{Design and
+policy implications} for disability-inclusive adaptation and for accessible
+research instruments. Make explicit which contribution is the primary one
+(recommend: the method + validity evidence).}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.6\columnwidth]{Prisma.pdf}
-\caption{PRISMA-ScR flow of identification and screening (2006--2025),
-yielding the 267-record extended dataset and the 42-record core dataset.}
-\label{fig:prisma}
-\end{figure}
+\guide{Close the introduction with one sentence positioning the paper
+against the related scoping review: this paper uses the review only as
+conceptual grounding; its contribution, data, and method are distinct (see
+Section~\ref{sec:distinct}).}
 
-\textbf{Four mechanisms of exclusion.} Across the core dataset, exclusion
-was reproduced through four recurrent behavioural mechanisms, each made
-intelligible by an established social-science lens. \emph{Vulnerability
-framing} positions disabled people as recipients of protection rather
-than decision-makers; read through social dominance theory and critical
-disability studies, the frame works as a legitimising narrative that
-recasts exclusion as care \cite{sidanius_pratto_1999_socdom,oliver_1990_politics}.
-\emph{Internalised acceptance of token inclusion} is the muted demand for
-reform once recognition is formally granted; system justification theory
-explains why disadvantaged groups may treat such arrangements as natural
-\cite{jost_2003_decade}. \emph{DPO-led participation} captures that
-meaningful participation occurs only where Disabled People's
-Organisations lead, not where they are merely consulted; the capability
-approach frames DPOs as the conversion factors that turn formal
-entitlements into actual functioning \cite{sen_1999_development}.
-\emph{Institutional normalisation} is the silent assumption of
-able-bodied users in routine planning; institutional theory accounts for
-how organisational routines reproduce such assumptions through habit
-rather than explicit intent \cite{dimaggio_powell_1983_ironcage}. Because
-these are stable, repeatable behaviours rather than diffuse attitudes,
-they are actionable design targets.
+%% =====================================================================
+\section{Related Work}
+\label{sec:related}
+%% =====================================================================
+\guide{One framing sentence: organise related work around the four pillars
+the contribution sits between, and end each subsection by naming what it
+leaves unresolved that this paper addresses. The review must let a reviewer
+see what is already known and why this paper is new --- not a generic
+survey.}
 
-\textbf{Design requirements.} Treating exclusion as behaviour rather than
-as a diffuse normative shortfall yields a direct design implication: a
-method intended to generate evidence on these mechanisms must place
-behaviour, framing, and participation architecture at the centre of its
-design. Table~\ref{tab:bridge} translates each mechanism, via its
-theoretical lens, into a concrete game-design response; these responses
-become the requirements the game in Section~\ref{sec:game} is built to
-satisfy.
+\subsection{Disability, Climate Adaptation, and the Vulnerability--Agency
+Framing}
+\label{sec:rw-disability}
+\guide{Summarise the disability + climate-adaptation literature: dispro-
+portionate harm, the vulnerability frame, and the shift toward agency,
+participation, and DPO leadership. Draw on the grounding already written in
+the scoping-review document (Disability/Climate/Justice; Vulnerability to
+Agency; Disability Rights in Governance). End by stating the unresolved
+problem: behavioural evidence on adaptive agency exists but is not
+structured for design or policy use.}
+
+\subsection{Accessibility, Disability Agency, and Participatory Design in
+HCI}
+\label{sec:rw-pd}
+\guide{Position the work in HCI accessibility and participatory/co-design
+traditions, especially work that treats disabled people as co-designers and
+agents rather than test subjects, and critiques of token participation. Tie
+to the design-justice / ``nothing about us without us'' literature. End by
+noting that participatory accessibility work rarely targets climate
+adaptation \emph{policy} evidence as its output.}
+
+\subsection{Serious and Narrative Games, and Simulation as a Research
+Method}
+\label{sec:rw-games}
+\guide{Two moves here. First, serious/narrative games and scenario planning
+for climate education, communication, and data collection --- and their
+inclusion gap (most target the general public/students; disabled people are
+under-represented as players and absent as co-designers). Second, and more
+important for the reframe: simulation/role-play as a \emph{research method}
+in HCI and the social sciences --- what makes simulated decisions
+informative, and the standing debate about the \emph{validity} of behaviour
+elicited in simulated vs.\ real settings. This subsection must set up the
+validity argument that Section~\ref{sec:discussion} resolves.}
+
+\subsection{Research through Design, Policy Prototyping, and Sustainable
+HCI}
+\label{sec:rw-rtd}
+\guide{Connect to (a) research through design as the epistemology for
+producing knowledge via an artefact; (b) policy prototyping / civic and
+public-sector HCI as the application frame for generating policy-relevant
+evidence; (c) sustainable HCI / climate HCI as the domain. End by stating
+the synthesis gap this paper fills: no prior work combines accessible
+narrative simulation, RtD, and policy prototyping to produce \emph{valid
+behavioural evidence from disabled people} for adaptation policy.}
+
+\subsection{Relationship to Our Prior Scoping Review}
+\label{sec:distinct}
+\guide{Short, explicit subsection required by CHI's originality rule.
+Tabulate or state the distinction between THIS paper and the related npj
+Climate Action scoping review: different research questions (the review
+asks \emph{what is known}; this paper asks \emph{how to elicit valid
+behavioural evidence and what disabled people do}); different data (review =
+267/42 published records; this paper = primary study data from N disabled
+participants); different methods (review = bibliometrics + BERTopic +
+qualitative synthesis; this paper = RtD + empirical study); different
+contribution (review = synthesis of literature; this paper = a method, an
+artefact, and primary findings). State that the review's exclusion
+mechanisms are used here only as design \emph{input}, and no review text or
+its principal contribution is reproduced.}
+
+%% =====================================================================
+\section{Research Questions}
+\label{sec:rqs}
+%% =====================================================================
+\guide{State 2--3 RQs scoped to THIS paper (not the whole PhD). Recommended:
+\textbf{RQ1} How can literature-derived mechanisms of exclusion be
+translated into a location-specific, accessible narrative simulation that
+elicits decision-level behavioural evidence from disabled people?
+\textbf{RQ2} What does such a simulation reveal about how disabled people
+adapt to a localised climate hazard (strategies, barriers, trust, policy
+preferences)? \textbf{RQ3} To what extent, and under what conditions, does
+the behavioural evidence it elicits appear \emph{valid} for use in
+disability-inclusive adaptation policy design and evaluation? Map each RQ to
+the section that answers it.}
+
+%% =====================================================================
+\section{Design of the Narrative Simulation}
+\label{sec:design}
+%% =====================================================================
+\guide{Framing sentence: present this section as research through design ---
+the artefact and its rationale are part of the contribution. Make the design
+process auditable: literature-derived mechanisms $\rightarrow$ design
+requirements $\rightarrow$ scenario, accessibility, and prototype.}
+
+\subsection{Design Process and Rationale}
+\label{sec:design-process}
+\guide{Describe the end-to-end design process so a reviewer can assess
+research quality: who was involved (research team roles, DPO partners),
+the number and format of co-design activities, how decisions were made and
+recorded, and how the design iterated. This is where you establish the RtD
+methodology and the audit trail. Mark any not-yet-completed iterations with
+\TODO{}.}
+
+\subsection{From Exclusion Mechanisms to Design Requirements}
+\label{sec:mechanisms}
+\guide{Carry over the four behavioural mechanisms of exclusion from the
+scoping review --- vulnerability framing, internalised acceptance of token
+inclusion, DPO-led participation, institutional normalisation --- each with
+its theoretical lens (social dominance / critical disability studies; system
+justification; capability approach; institutional theory). Keep this brief:
+it is design \emph{input}, not the paper's contribution. Then present the
+translation table (below) as the bridge to requirements.}
 
 \begin{table}[htbp]
-\caption{From exclusion mechanisms to accessible game-design responses.}
+\caption{From literature-derived exclusion mechanisms, via their theoretical
+lens, to concrete narrative-simulation design requirements. (Carried over
+and refined from the design rationale; ensure the caption is descriptive and
+the table is screen-reader accessible --- real text, not an image.)}
 \label{tab:bridge}
 \small
 \renewcommand{\arraystretch}{1.25}
 \begin{tabular}{@{}p{0.30\columnwidth}p{0.20\columnwidth}p{0.40\columnwidth}@{}}
 \toprule
-\textbf{Exclusion mechanism} & \textbf{Theoretical lens} & \textbf{Game-design response} \\
+\textbf{Exclusion mechanism} & \textbf{Theoretical lens} & \textbf{Design requirement} \\
 \midrule
-Vulnerability framing &
-Social dominance \cite{sidanius_pratto_1999_socdom}; critical disability
-studies \cite{oliver_1990_politics} &
-\emph{Framing-as-choice}: decision points where the same character can
-act as protected recipient \emph{or} decision-maker, so acceptance or
-contestation of the frame is observable. \\
+Vulnerability framing & Social dominance; critical disability studies &
+\emph{Framing-as-choice}: decision points where the same character can act
+as protected recipient \emph{or} decision-maker, so the frame's acceptance
+or contestation is observable. \\
 \addlinespace
-Internalised acceptance of token inclusion &
-System justification \cite{jost_2003_decade} &
+Internalised acceptance of token inclusion & System justification &
 \emph{Parallel routes}: token/consultative vs.\ disabled-led decision
-paths; players may accept, decline, or reconfigure them. \\
+paths the player may accept, decline, or reconfigure. \\
 \addlinespace
-DPO-led participation &
-Capability approach \cite{sen_1999_development} &
-\emph{Participation architecture as structural}: DPO-mediated channels,
-twin-track communication, and disability-led routes built into the
-scenario, not bolted on. \\
+DPO-led participation & Capability approach &
+\emph{Participation architecture as structural}: DPO-mediated channels and
+twin-track communication built into the scenario, not bolted on. \\
 \addlinespace
-Institutional normalisation &
-Institutional theory \cite{dimaggio_powell_1983_ironcage} &
+Institutional normalisation & Institutional theory &
 \emph{Capability-oriented scenarios}: expose conversion factors
-(information, transport, trusted intermediaries) as objects of action,
-not invisible background. \\
+(information, transport, trusted intermediaries) as objects of action, not
+invisible background. \\
 \bottomrule
 \end{tabular}
+\guide{Keep the table, but add one column or sentence linking each
+requirement to the RQ and to the specific decision point that operationa-
+lises it, so the design is traceable end-to-end.}
 \end{table}
 
-\subsection{Game Concept and Interaction Design}
-\label{sec:game}
-\textbf{Why a narrative game?} The method follows from the kind of
-evidence the design must generate. Climate adaptation is not purely a
-matter of rational choice: it is shaped by lived experience, trust in
-institutions, social support, uncertainty, and perceived fairness---
-dimensions that situated decisions reveal but reported preferences
-obscure. The design therefore builds on \emph{scenario planning}, a
-long-established approach for reasoning under environmental uncertainty
-\cite{wack1985scenarios,bowman2013storytelling} that is widely used in
-climate and disaster governance to study how stakeholders perceive risk,
-negotiate trade-offs, and respond to policy change
-\cite{TannenbaumBaruchi2024}. A \emph{game} extends scenario planning by
-letting participants \emph{choose} paths through a scenario rather than
-merely contemplate them \cite{somerdin2016game}, and games have been
-applied across climate education, communication, and data collection
-\cite{gerber2021games,mcgonigal2011reality,ulrich2014gaming}. Yet most
-climate games target the general public or students, leaving disabled
-people underrepresented as players and absent as co-designers
-\cite{o2010values}. We therefore repurpose the narrative game not as an
-educational tool but as an accessible, participatory method for eliciting
-disabled people's adaptive decisions under realistic constraints, with
-traceable trade-offs that surveys and interviews capture only partially.
+\subsection{Selecting the Geographic and Policy Context}
+\label{sec:context}
+\guide{NEW section the CHI requirements demand explicitly. Justify the
+choice of a specific location and policy context (e.g. the city/region whose
+heat-action plan, housing stock, transport, and DPO landscape the scenario
+models). Explain WHY location-specificity matters for validity: generic
+scenarios elicit generic answers; realistic, locally accurate constraints
+elicit behaviourally meaningful decisions. State the sources used to make
+the scenario locally accurate (policy documents, climate data, accessibility
+audits, DPO knowledge) and the boundaries of what the context represents.}
 
-\textbf{Format and structure.} The game is a single-player, branching
-narrative built across three layers: an \emph{infrastructure} layer
-(accessible digital delivery, with disabled people as primary
-participants and DPOs as co-designers); a \emph{mechanics} layer
-(climate-adaptation decisions structured as scenario missions); and an
-\emph{equity} layer (distributive, procedural, and contextual equity,
-after McDermott et al.\ \cite{mcdermott2013examining}). Rather than spread
-thin across many hazards, the pilot implements \emph{one complete
-scenario}---an urban heatwave experienced by a wheelchair user living
-alone in a top-floor flat---played end to end so that a full adaptive
-pathway, not an isolated choice, is captured.
-
-\textbf{Scenario walkthrough.} The scenario unfolds through seven linked
-decision points (Figure~\ref{fig:scenario}), each instantiating one or
-more of the design responses in Table~\ref{tab:bridge}:
-\begin{itemize}
-\item \textbf{Warning information} --- a heat alert arrives; the player
-acts on information that may or may not be accessible, with a
-DPO-mediated alert offered as a parallel route to the official broadcast.
-\item \textbf{Housing conditions} --- the flat overheats; staying,
-improvising cooling, or leaving surfaces the conversion factors that make
-``shelter in place'' advice livable or not.
-\item \textbf{Transport} --- reaching a cooling centre depends on
-accessible transport, exposing mobility-specific barriers as objects of
-action.
-\item \textbf{Healthcare} --- heat-sensitive medication and a
-pre-existing condition raise the stakes of delay, linking adaptation to
-health needs.
-\item \textbf{Support networks} --- the player can draw on informal help
-(a neighbour) or formal services, making trust and social support
-visible.
-\item \textbf{Public services} --- at the cooling centre, the player
-encounters whether the space is genuinely accessible or accessible ``in
-name only.''
-\item \textbf{DPO involvement} --- throughout, a disability-led channel
-offers an alternative route to information, advocacy, and
-decision-making, which the player may accept, decline, or reconfigure.
-\end{itemize}
-
-\textbf{Behavioural evidence generated through player choices.} At each decision point, the same character may be positioned either as a protected recipient or as an active decision-maker. The game records both participants’ selections and their stated reasoning, generating decision-level evidence on adaptive strategies, perceived barriers, trust, and policy preferences that may be only partially captured through conventional surveys or interviews.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\columnwidth]{Game2.jpg}
-\caption{Narrative game framework linking identified behavioural mechanisms to the infrastructure, mechanics, and equity dimensions (Need to revise).}
-\label{fig:scenario}
-\end{figure}
+\subsection{Scenario Design: An Urban Heatwave}
+\label{sec:scenario}
+\guide{Describe the single, complete, end-to-end scenario (a wheelchair user
+living alone in a top-floor flat during an urban heatwave) and its seven
+linked decision points: warning information, housing conditions, transport,
+healthcare, support networks, public services, DPO involvement. For each,
+say which design requirement (Table~\ref{tab:bridge}) it instantiates and
+what behavioural evidence it is intended to surface. Justify the single-
+scenario, played-end-to-end choice (full adaptive pathway vs.\ isolated
+choices). Include the scenario figure with descriptive alt text. Replace the
+old poster figure that is marked ``need to revise''.}
 
 \subsection{Accessibility Design}
-Accessibility is treated as a design requirement, not a post-hoc
-adjustment, and is specified concretely for the first pilot round with
-mobility-disabled participants. WCAG~2.2 Level AA provides the
-accessibility target for the prototype, although formal conformance
-testing remains future work. The prototype is designed to provide:
-\begin{itemize}
-\item \textbf{Input and motor.} Full keyboard operability for every
-interaction; switch-access compatibility; large interactive targets
-($\geq$44$\times$44\,px) with generous spacing; a non-pointer equivalent
-for every pointer action. No interaction requires fine motor control,
-drag, or multi-touch.
-\item \textbf{Timing.} No time-limited decisions---heatwave urgency is
-conveyed through narrative, not a countdown---so fatigue and variable
-response times are accommodated. Sessions can be paused, saved, and
-resumed.
-\item \textbf{Perception and comprehension.} Screen-reader-compatible
-markup and reading order; text alternatives for images; captions for
-audio; minimum 4.5:1 text contrast; plain-language phrasing with optional
-expansion of complex terms; no information conveyed by colour alone.
-\item \textbf{Session and ethics.} Accessible consent; the right to
-pause, skip, or withdraw at any point; scenarios screened to avoid
-gratuitously distressing content. A remote option runs in parallel, not
-as a fallback; in-person venues meet step-free access, accessible toilet
-provision, and accessible transport routing.
-\end{itemize}
-Several requirements (screen-reader support, plain language, alt text)
-exceed the strict needs of mobility-disabled players and are retained as
-cross-cutting baselines that benefit participants with secondary or
-co-occurring access needs. Accessibility and recruitment decisions are
-made with DPO partners, so the research medium itself does not reproduce
-the institutional normalisation the review identifies.
+\label{sec:accessibility}
+\guide{Present accessibility as a design requirement, not a retrofit, and as
+part of the validity argument (an inaccessible instrument cannot yield valid
+evidence). Cover, concretely: input/motor (full keyboard operability, switch
+access, large targets, non-pointer equivalents); timing (no time-limited
+decisions; pause/save/resume); perception/comprehension (screen-reader
+markup and reading order, text alternatives, contrast, plain language, no
+colour-only information); and session/ethics (accessible consent; right to
+pause/skip/withdraw; content screening; parallel remote option). State the
+WCAG~2.2 AA target and be precise about what is \emph{implemented and tested}
+vs.\ specified --- do not claim conformance you have not verified
+(\TODO{conformance test status}). Note that several baselines exceed the
+needs of the mobility cohort and are retained as cross-cutting benefits.}
 
-\section{Prototype}
-The current prototype is an interactive Figma mock-up of the
-urban-heatwave scenario, not a deployed software build, and is still in
-development. It comprises X linked frames covering X of the seven
-decision points described in Section~\ref{sec:game}, navigable through
-clickable hotspots that branch between accessible and inaccessible
-adaptation pathways. At this stage the prototype establishes the visual
-language, narrative flow, and decision structure of the game; it is used
-to elicit early feedback from disabled participants and DPO partners
-before engineering effort is committed.
+\subsection{Prototype Implementation}
+\label{sec:prototype}
+\guide{Frame this as a TWO-ARTEFACT pipeline and explain why each stage
+exists --- the progression is itself part of the RtD argument. Outline only;
+fill the specifics (platform names, frame counts, tech stack, logged fields)
+yourself.}
 
-Its purpose is formative: to test whether the heatwave scenario reads as
-realistic and relevant, whether the decision points are understandable,
-and whether the interaction model is navigable. The prototype does
-\emph{not} yet implement programmatic accessibility (screen-reader
-semantics, keyboard/switch operability, save/resume); these are specified
-in Section~4 as requirements for the engineered build and are not claimed
-of the Figma artefact. Data capture, branching logic, and the analysis
-pipeline are likewise future work.
+\subsubsection{Figma Prototype (Co-Design and Formative Testing)}
+\label{sec:proto-figma}
+\guide{Outline the Figma click-through artefact used for co-design with DPO
+partners and formative testing: its purpose (establish narrative flow,
+decision structure, and visual language; surface realism, comprehension, and
+accessibility issues cheaply before engineering), which decision points it
+covers, and the kind of feedback it is built to elicit. State plainly that
+it does NOT implement programmatic accessibility or automated interaction
+logging --- these are deferred to the web prototype --- so no validity claim
+rests on it. Include a labelled Figma figure with descriptive alt text.}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\columnwidth]{Scenairo.png}
-\caption{( need to revise and add to 3 scenarios) A frame from the urban-heatwave scenario, showing a decision point in the narrative game.}
-\label{fig:scenario}
-\end{figure}
+\subsubsection{Programmable Web Prototype (Formal Pilot)}
+\label{sec:proto-web}
+\guide{Outline the engineered web prototype used for the formal pilot: that
+it carries the design forward from Figma into a deployable build targeting
+WCAG~2.2~AA, with real branching logic and, crucially for CHI, automated
+\emph{interaction logging} (which events, choices, timings, path revisions,
+and route selections are captured, and how they are stored and linked to
+participant talk). This is the artefact on which the validity argument rests.
+Mark anything not yet built with \TODO{} rather than describing it as done.}
 
-\section{Data Collection: Interviews and Focus Group (from 4-10 disabled participants; need ethical approval)}
+%% =====================================================================
+\section{Method}
+\label{sec:method}
+%% =====================================================================
+\guide{Framing sentence naming the overall empirical design (e.g.
+qualitative study with interaction logging; or mixed-methods), the unit of
+analysis, and how the method answers RQ2 and RQ3. This whole section must
+contain enough detail for a reviewer to judge research quality --- it cannot
+read as a pilot.}
 
-\textbf{Participants and method.} We conducted semi-structured interviews with four disabled participants recruited through Chinese DPO partner, the Inclusive Laboratory for People with Disabilities. Each participant took part in a remote [X]-minute session involving a guided walkthrough of the Figma prototype, followed by open-ended questions and prompts. Participants were encouraged to comment on the realism of the scenario, the clarity and accessibility of the interaction, and any aspects of the design that excluded, constrained, or misrepresented their experiences. Informed consent was obtained before participation, and [ethics approval status]. The interviews were formative and qualitative; no claims of representativeness or generalisability are made from this small sample.
+\subsection{Study Design}
+\label{sec:study-design}
+\guide{Outline the two-stage evaluation that mirrors the two artefacts, and
+be explicit about which stage produces the paper's primary evidence. Stage 1
+--- \emph{formative co-design testing} on the Figma prototype with DPO
+partners and disabled participants, to refine realism, comprehension, and
+accessibility (shapes the design; not the validity claim). Stage 2 --- the
+\emph{formal pilot} on the programmable web prototype, where each participant
+works through the simulation (walkthrough, think-aloud, post-task interview)
+while interaction is logged, yielding the decision-level behavioural evidence
+for RQ2 and RQ3. State session length and format (remote/in-person) and what
+data each stage produces. Describe the formal pilot as the study the paper
+reports, and mark uncollected parts with \TODO{}; leave N and specifics to
+you.}
 
-\textbf{Semi-structured interview guide.} The interviews addressed three broad areas: (i) whether the urban heatwave scenario was realistic and relevant to participants’ lived experiences; (ii) whether the decision points, narrative consequences, and interaction flow were understandable and accessible; and (iii) whether any part of the prototype reproduced exclusion, restricted agency, or misrepresented disability-related needs and responses.
+\subsection{Participants, Recruitment, and Inclusion Criteria}
+\label{sec:participants}
+\guide{Report recruitment route (DPO partner, anonymised as ``a Disabled
+People's Organisation'' for review), inclusion/exclusion criteria, target N
+and rationale for sample size, and the disability/access profile of the
+cohort (the study scopes to mobility-related access needs for round one ---
+state this and why). Provide a participant table (anonymised IDs, relevant
+self-described characteristics) --- but do NOT invent demographics; mark
+\TODO{participant table from collected data}. State the geographic/community
+scope the sample does and does not represent.}
 
-\textbf{Formative findings.} % 3--5 short findings
-\begin{itemize}
-\item \emph{Relevance / realism:} [\ldots]
-\item \emph{Understandability / navigation:} [\ldots]
-\item \emph{Accessibility issues raised:} [\ldots]
-\item \emph{Framing / representation:} [\ldots]
-\item \emph{Requested changes / additions:} [\ldots]
-\end{itemize}
+\subsection{Procedure}
+\label{sec:procedure}
+\guide{Step-by-step session protocol: consent, accessibility set-up and
+checks, walkthrough, think-aloud prompts, decision points, post-task
+semi-structured interview, debrief. Reference the interview guide (in
+supplementary materials, anonymised). Be specific enough to reproduce.}
 
-\textbf{Design revisions informed by participant feedback.} [ concrete design changes
-prompted by the feedback, or ``planned'' .]
+\subsection{Data Collection and Interaction Logging}
+\label{sec:data}
+\guide{Specify every data stream: audio/video or transcript of think-aloud
+and interview; the interaction log (choices made, paths taken, time on
+decision, revisions, use of DPO vs.\ official routes); and any artefacts. Say
+how logs and talk are time-aligned for analysis. This subsection is what
+lets you make the validity argument --- be concrete.}
 
+\subsection{Analysis}
+\label{sec:analysis}
+\guide{Describe the analytic approach for each data type. For qualitative
+talk: the coding approach (e.g. reflexive thematic analysis or grounded-
+theory-informed coding), who coded, how the codebook was developed, and how
+agreement/credibility was handled. For interaction logs: how choices and
+paths were summarised and linked to reasoning. State the analytic question
+behind RQ3: how you assess correspondence between in-simulation behaviour
+and reported/known real behaviour. Reference the coding framework in
+supplementary materials. Mark analysis not yet done with \TODO{}.}
+
+\subsection{Researcher Reflexivity and Positionality}
+\label{sec:reflexivity}
+\guide{Required by CHI for this kind of work. State the research team's
+positionality relative to disability and to the study community, how that
+shaped design and interpretation, the role of DPO partners as co-designers
+(not just recruiters), and steps taken to avoid speaking \emph{for}
+participants. Keep it specific and honest.}
+
+\subsection{Ethics}
+\label{sec:ethics}
+\guide{Write the ethics statement to this fixed structure; fill the keywords
+yourself. (1) \emph{Status} --- application is currently IN PREPARATION /
+under review at the authors' institution (anonymised); state this honestly
+and do NOT claim approval has been granted. (2) \emph{Safeguard} --- state
+that no participant data are collected or reported until the protocol is
+approved, so every result in the paper falls under the approved protocol
+(\TODO{update wording once approval is granted}). (3) \emph{Consent} ---
+accessible, informed, ongoing; right to pause, skip, or withdraw without
+penalty. (4) \emph{Privacy and data handling} --- anonymisation, storage,
+retention, access. (5) \emph{Accessibility provisions} for participation
+(see Section~\ref{sec:accessibility}). (6) \emph{Safeguarding} ---
+distress-content screening, support routes, debrief. Keep it concise; leave
+committee/institution names anonymised for review.}
+
+\subsection{Terminology and Disability Language}
+\label{sec:terminology}
+\guide{Short subsection: state and justify your disability-language choices
+(e.g. identity-first vs.\ person-first and why), acknowledge that
+communities differ, and name which disability communities and geographic
+contexts the study \emph{does} and \emph{does not} represent. This both
+satisfies the inclusive-writing requirement and pre-empts a validity
+critique about over-generalisation.}
+
+%% =====================================================================
 \section{Findings}
+\label{sec:findings}
+%% =====================================================================
+\guide{This section currently does not exist in the poster and is the single
+most important thing to write for a complete CHI paper. Organise findings as
+2--4 themes that answer RQ2 (how disabled people adapted: strategies,
+barriers, trust, policy preferences surfaced at the decision points) and at
+least one theme answering RQ3 (signals of validity --- e.g. where
+participants recognised the scenario as realistic, corrected it from lived
+experience, or where in-simulation choices matched/diverged from what they
+said they do in reality). Each theme: a claim, supporting evidence from BOTH
+the interaction log and participant talk, and an illustrative anonymised
+quotation. \TODO{All findings, themes, quotations, and counts must come from
+collected, analysed data --- none may be written until that data exists. Do
+not fabricate.} Include any figures/tables summarising choice
+distributions or pathway patterns, with accessible captions.}
 
+\subsection{\TODO{Theme 1 --- name after analysis}}
+\guide{Placeholder for first finding theme. Replace title with the analysed
+theme; one paragraph of claim + evidence + quote.}
+
+\subsection{\TODO{Theme 2 --- name after analysis}}
+\guide{Placeholder. As above.}
+
+\subsection{\TODO{Theme 3 --- name after analysis (validity-bearing)}}
+\guide{Placeholder for the theme that speaks to RQ3 (validity of elicited
+behaviour). As above.}
+
+%% =====================================================================
 \section{Discussion}
-This work reframes a problem usually treated as one of policy recognition
-as a problem of accessible, participatory design. By translating four
-empirically grounded mechanisms of exclusion into concrete design
-requirements (Table~\ref{tab:bridge}), it offers a route from scattered
-qualitative evidence on disabled people's adaptive decisions toward an
-artefact that elicits such evidence directly and in a comparable form.
-The narrative game positions disabled participants as decision-makers
-rather than as subjects of risk assessment, and embeds DPO-led
-participation as a structural feature rather than an accommodation,
-addressing two mechanisms the review identifies as central.
+\label{sec:discussion}
+%% =====================================================================
+\guide{Open by restating the contribution in light of the findings, then
+organise into the subsections below. Make the HCI contribution explicit
+here (originality, significance, validity).}
 
-Three limitations bound the contribution and are stated plainly. The work
-is early-stage: the prototype is a Figma mock-up, and formative feedback
-comes from two participants, so we make no claims of generalisability.
-In-game choices are not identical to real-world behaviour; we treat the
-game as a structured elicitation method, not a predictor of conduct under
-actual climate stress. And the pilot deliberately scopes to one hazard
-(urban heatwave) and one access group (mobility); extending to sensory,
-cognitive, and communication-related needs is a design challenge in its
-own right, since a single accessibility solution will not serve a
-heterogeneous population. These constraints define the agenda rather than
-undermining the approach.
+\subsection{Validity of Behavioural Evidence from Narrative Simulation}
+\label{sec:disc-validity}
+\guide{The intellectual core of the reframed paper. Argue, from the
+findings, the conditions under which location-specific narrative simulation
+elicits \emph{valid} behavioural evidence from disabled people --- and where
+it does not. Address the standard threats (in-game vs.\ real behaviour,
+demand characteristics, scenario realism, single-context specificity) and
+say how the design and data mitigate or expose them. Be candid: position the
+simulation as a structured elicitation method, not a predictor of conduct.
+This subsection is what elevates the work from an artefact paper to a methods
+contribution.}
 
-\section{Conclusion and Future Work}
-We have presented the design rationale for an accessible narrative game
-that turns evidence of how disabled people are excluded from climate
-adaptation into a method for generating decision-level behavioural
-evidence with them. A mixed-methods review yielded four behavioural
-mechanisms of exclusion; these were translated into concrete game-design
-requirements and an accessibility specification, realised so far as an
-interactive Figma prototype of a single urban-heatwave scenario and
-shaped by formative feedback from disabled participants and DPO partners.
+\subsection{Design Implications for Accessible Research Instruments and
+Adaptation Tools}
+\label{sec:disc-design}
+\guide{Generalise from the specific artefact to transferable design
+implications: e.g. framing-as-choice, parallel routes, structural
+participation architecture, and capability-oriented scenarios as reusable
+patterns for accessible simulation/elicitation instruments beyond this
+hazard and cohort.}
 
-Future work proceeds along three lines. First, \emph{engineering}:
-building the prototype into a deployable game that meets the WCAG~2.2 AA
-target and undergoes formal conformance testing, with data capture and
-branching logic implemented. Second, \emph{a DPO-co-designed pilot} with
-mobility-disabled participants, followed by staged extension to sensory,
-cognitive, and communication-related access needs against explicit
-criteria. Third, \emph{analysis}: the behavioural and narrative data the
-game generates will be analysed through Grounded Theory and topic
-modelling, and the resulting concepts will inform an agent-based model
-that evaluates the equity and effectiveness of disability-inclusive
-adaptation policies. Together these steps move disability inclusion from
-recognition toward testable, implementation-level design and evaluation.
+\subsection{Implications for Disability-Inclusive Adaptation Policy}
+\label{sec:disc-policy}
+\guide{Spell out how the evidence the method produces can feed adaptation
+\emph{policy design and evaluation} --- the headline of the reframe. Connect
+to how decision-level, comparable behavioural evidence could inform heat-
+action planning, twin-track communication, and (forward-looking, clearly
+labelled) computational policy evaluation, without overclaiming.}
 
+\subsection{Limitations}
+\label{sec:limitations}
+\guide{State limitations plainly and proportionately: single hazard (urban
+heat) and single access group (mobility) by design; specific geographic/
+policy context; sample size and recruitment through one DPO; simulation--
+reality gap; prototype maturity for the reported study. Frame these as
+scope boundaries that define the agenda, and point to which are addressed by
+the design vs.\ left for future work. Remove the old ``two participants /
+work in progress'' framing.}
+
+%% =====================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+%% =====================================================================
+\guide{One paragraph. Restate the problem, the method (location-specific
+accessible narrative simulation grounded in exclusion mechanisms and
+co-designed with DPOs), the key findings, and the validity verdict, then the
+contribution to HCI methods/design/practice. End with the most credible
+single line of future work (e.g. extension to other hazards/access needs and
+to computational policy evaluation) --- as an extension of a complete
+contribution, NOT as the thing that completes it.}
+
+%% =====================================================================
+%% ETHICS / OPEN-SCIENCE STATEMENTS (anonymised) -- optional per venue
+%% =====================================================================
+\guide{If CHI 2027 requires separate ethics/open-science statements outside
+the main text, place anonymised versions here. Otherwise keep ethics in
+Section~\ref{sec:ethics}.}
+
+%% =====================================================================
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{Reference}
+%% =====================================================================
+
+\appendix
+\section{Supplementary Materials (Anonymised)}
+\guide{List, do not embed, the supplementary materials and confirm each is
+anonymised: interview guide, scenario script, study protocol, coding
+framework, prototype walkthrough, and optional prototype video. State
+explicitly that the main paper's contribution is understandable without
+them (CHI requirement). Ensure nothing essential (methods, results, contri-
+bution claims) lives only here.}
 
 \end{document}
